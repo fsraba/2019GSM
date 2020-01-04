@@ -1,0 +1,41 @@
+<html>
+  <head>
+  <title>GSM_Finger_info</title>
+    <link rel="stylesheet" href="public/css/fin_enroll.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code/jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+        <center>
+                <h1>지문 삭제ㅔ엑</h1>
+            
+                <form action="/fin_delete" method="post">
+                    학번과 이름 : <input type="text" id="stuinfo" name="stuinfo">
+                    <br> 아이디 값 : <input type="text" id="fin_id" name="fin_id">
+                    <br><button><a href="/data_search" style="text-decoration: none; color: black;">OK</a></button>
+                </form>
+         </center>
+
+         <script>
+              $("#OK").click(function(){
+                 $.ajax({
+                     url:'/postTEst',
+                     async:true,
+                     type:'POST',
+                     data:{
+                         stuinfo: $("#stuinfo").val(),
+                         fin_id: $("#fin_id").val()
+                     },
+                     dataType:'json',
+                     success: function(data){
+                         alert("delete_success!");
+                     },
+                     error:function(err){
+                         alert("fail"+err);
+                     }
+                 });
+                 
+             });
+         </script>
+  </body>
+</html>

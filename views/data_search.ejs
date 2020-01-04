@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            등록 지문 
+        </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+      <center>
+          <h1>GSM</h1>
+        <form action="/data_search" method="get">
+            <button type="submit">조회</button>
+        </form> 
+        <br><button><a href="/index" style="text-decoration: none; color: black;">HOME</a></button>
+        <FOR 조회<br>
+        <% if(locals.data){ %>
+            <% for(let i=0;i<data.length;i++){ %>
+                stuname : <%= data[i].stu_name %>, id : <%= data[i].id %><br>
+            <% } %>
+        <% } %>
+      </center>
+    </body>
+</html>
